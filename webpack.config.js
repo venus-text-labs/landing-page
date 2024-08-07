@@ -29,12 +29,13 @@ module.exports = {
             },
             {
                 test: /\.(jpe?g|png|gif|svg)$/i,
-                include: path.resolve(__dirname, 'src/assets/images'),
+                include: path.resolve(__dirname, 'src/assets'),
                 use: [{
                     loader: 'file-loader',
                     options: {
-                        name: '[name].[ext]',
-                        outputPath: 'assets/images/'
+                        name: '[path][name].[ext]',
+                        context: path.resolve(__dirname, 'src'),
+                        publicPath: 'assets/'
                     }
                 }]
             },
