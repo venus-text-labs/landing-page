@@ -18,6 +18,7 @@ module.exports = {
         hot: true,
         open: true,
         historyApiFallback: true,
+        watchFiles: ['src/**/*'],
     },
     module: {
         rules: [
