@@ -49,8 +49,19 @@ module.exports = (env, argv) => {
                         {
                             loader: 'file-loader',
                             options: {
-                                include: path.resolve(__dirname, 'src/assets'),
-                                name: '[path][name].[ext]',
+                                name: '[name].[ext]', // No [path] here to avoid duplicating directories
+                                outputPath: (url, resourcePath, context) => {
+                                    // Remove the 'src/' from the path and place files correctly
+                                    const relativePath = path.relative(context, resourcePath);
+                                    const correctedPath = relativePath.replace('src/', '');
+                                    return correctedPath;
+                                },
+                                publicPath: (url, resourcePath, context) => {
+                                    // Ensuring the public path mirrors the outputPath
+                                    const relativePath = path.relative(context, resourcePath);
+                                    const correctedPath = relativePath.replace('src/', '');
+                                    return correctedPath;
+                                },
                             },
                         },
                         {
@@ -85,7 +96,7 @@ module.exports = (env, argv) => {
                 filename: 'pricing.html',
             }),
             ...(isProduction ? [] : [new webpack.HotModuleReplacementPlugin()]),
-            ...(!isProduction ? [] : [new BundleAnalyzerPlugin()]), // Comment this out in production if not needed
+            ...(isProduction ? [] : [new BundleAnalyzerPlugin()]), // Comment this out in production if not needed
         ],
         optimization: {
             splitChunks: {
