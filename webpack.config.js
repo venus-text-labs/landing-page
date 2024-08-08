@@ -1,74 +1,108 @@
-const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const webpack = require('webpack');
 
-module.exports = {
-    entry: './src/index.js',
-    output: {
-        filename: 'main.js',
-        path: path.resolve(__dirname, 'dist'),
-    },
-    devServer: {
-        static: {
-            directory: path.join(__dirname, 'dist'),
+module.exports = (env, argv) => {
+    const isProduction = argv.mode === 'production';
+
+    return {
+        mode: isProduction ? 'production' : 'development',
+        entry: './src/index.js',
+        output: {
+            filename: '[name].[contenthash].js',
+            path: path.resolve(__dirname, 'dist'),
+            clean: true,
         },
-        compress: true,
-        port: 9000,
-        hot: true,
-        open: true,
-        historyApiFallback: true,
-        watchFiles: ['src/**/*'],
-        historyApiFallback: {
-            rewrites: [
-                { from: /^\/$/, to: '/index.html' },
-                { from: /^\/pricing$/, to: '/pricing.html' },
-                { from: /^\/get-started$/, to: '/get-started.html' },
+        devServer: {
+            static: {
+                directory: path.join(__dirname, 'dist'),
+            },
+            compress: true,
+            port: 9000,
+            hot: true,
+            open: true,
+            historyApiFallback: {
+                rewrites: [
+                    { from: /^\/$/, to: '/index.html' },
+                    { from: /^\/pricing$/, to: '/pricing.html' },
+                    { from: /^\/get-started$/, to: '/get-started.html' },
+                ],
+            },
+        },
+        module: {
+            rules: [
+                {
+                    test: /\.css$/i,
+                    use: [
+                        MiniCssExtractPlugin.loader,
+                        'css-loader',
+                        'postcss-loader'
+                    ],
+                },
+                {
+                    test: /\.(jpe?g|png|gif|svg)$/i,
+                    use: [
+                        {
+                            loader: 'file-loader',
+                            options: {
+                                include: path.resolve(__dirname, 'src/assets'),
+                                name: '[path][name].[ext]',
+                            },
+                        },
+                        {
+                            loader: 'image-webpack-loader',
+                            options: {
+                                mozjpeg: { progressive: true },
+                                optipng: { enabled: true },
+                                pngquant: { quality: [0.65, 0.90], speed: 4 },
+                                gifsicle: { interlaced: false },
+                                webp: { quality: 75 },
+                            },
+                        },
+                    ],
+                },
             ],
         },
-    },
-    module: {
-        rules: [
-            {
-                test: /\.css$/i,
-                include: path.resolve(__dirname, 'src'),
-                use: ['style-loader', 'css-loader', 'postcss-loader'],
-            },
-            {
-                test: /\.(jpe?g|png|gif|svg)$/i,
-                include: path.resolve(__dirname, 'src/assets'),
-                use: [{
-                    loader: 'file-loader',
-                    options: {
-                        name: '[path][name].[ext]',
-                        context: path.resolve(__dirname, 'src'),
-                        publicPath: 'assets/'
-                    }
-                }]
-            },
+        plugins: [
+            new MiniCssExtractPlugin({
+                filename: '[name].[contenthash].css',
+                chunkFilename: '[id].[contenthash].css',
+            }),
+            new HtmlWebpackPlugin({
+                template: './src/index.html',
+                filename: './index.html',
+            }),
+            new HtmlWebpackPlugin({
+                template: './src/get-started.html',
+                filename: 'get-started.html',
+            }),
+            new HtmlWebpackPlugin({
+                template: './src/pricing.html',
+                filename: 'pricing.html',
+            }),
+            ...(isProduction ? [] : [new webpack.HotModuleReplacementPlugin()]),
+            ...(!isProduction ? [] : [new BundleAnalyzerPlugin()]), // Comment this out in production if not needed
         ],
-    },
-    plugins: [
-        new MiniCssExtractPlugin({
-            filename: "styles.css",
-            chunkFilename: "styles.css",
-        }),
-        new HtmlWebpackPlugin({
-            template: "./src/index.html",
-            filename: "./index.html",
-        }),
-        new HtmlWebpackPlugin({
-            template: './src/get-started.html',
-            filename: 'get-started.html',
-        }),
-        new HtmlWebpackPlugin({
-            template: './src/pricing.html',
-            filename: 'pricing.html',
-        }),
-        new HtmlWebpackPlugin({
-            template: './src/about.html',
-            filename: 'about.html',
-        }),
-        new webpack.HotModuleReplacementPlugin(),
-    ],
+        optimization: {
+            splitChunks: {
+                chunks: 'all',
+            },
+            minimize: true,
+            minimizer: [
+                new TerserPlugin({
+                    terserOptions: {
+                        compress: {
+                            drop_console: true,
+                        },
+                    },
+                }),
+                new CssMinimizerPlugin(),
+            ],
+        },
+        devtool: isProduction ? false : 'source-map',
+    };
 };
