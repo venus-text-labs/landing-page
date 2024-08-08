@@ -49,22 +49,23 @@
       <nav
         class="w-full flex justify-between h-24 lg:my-4 items-center lg:absolute top-0 left-0 z-20"
       >
-        <div>
+        <a href="index.html">
           <img
             height="120"
             width="120"
             src="./assets/images/logo.png"
             alt="Venus Logo"
           />
-        </div>
+        </a>
         <div class="flex items-center justify-between gap-8">
           <a
-            href="#"
+            href="pricing.html"
             class="hover:underline text-zinc-200 z-50 hover:scale-105 text-xs lg:text-lg"
           >
             Pricing
           </a>
-          <button
+          <a
+            href="get-started.html"
             class="text-white z-50 lg:pr-1 bg-gradient-to-r text-xs lg:text-sm items-center inline-flex from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-1 focus:outline-none focus:ring-cyan-300 font-medium rounded-lg ease-in-out px-5 py-2.5 transition-colors delay-300 text-center me-2 mb-2"
           >
             Get Started
@@ -75,17 +76,17 @@
               src="./assets/images/arrow.svg"
               alt="Arrow"
             />
-          </button>
+          </a>
         </div>
       </nav>
       <div class="hero relative">
         <img
-          class="hidden md:block"
+          class="hidden md:block hero-img"
           src="./assets/images/hero.png"
           alt="hero image"
         />
         <img
-          class="md:hidden"
+          class="md:hidden hero-img"
           src="./assets/images/hero_mob.png"
           alt="hero image"
         />
@@ -93,15 +94,16 @@
           class="overlay absolute top-0 z-10 flex flex-col justify-center items-center w-full h-full"
         >
           <div class="lg:w-2/3 w-full text-center space-y-8 lg:pt-16 p-4">
-            <h1 class="lg:text-5xl text-4xl font-bold">
+            <h1 class="hero-heading lg:text-5xl text-4xl font-bold">
               A Powerful Way to Transform Your Tasks into Achievable Steps
             </h1>
-            <p class="text-zinc-300 lg:px-36">
+            <p class="hero-text text-zinc-300 lg:px-36">
               Get started and get things done quickly by effortlessly breaking
               down your big goals into manageable actions.
             </p>
-            <button
-              class="text-white tracking-widest pr-1 bg-gradient-to-r items-center inline-flex from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-lg text-lg ease-in-out px-5 py-2.5 transition-all text-center me-2 mb-2"
+            <a
+              href="get-started.html"
+              class="hero-btn text-white tracking-widest pr-1 bg-gradient-to-r items-center inline-flex from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-1 focus:outline-none focus:ring-cyan-300 font-medium rounded-lg text-lg ease-in-out px-5 py-2.5 transition-all text-center me-2 mb-2"
             >
               Get Started
               <img
@@ -110,14 +112,14 @@
                 src="./assets/images/arrow.svg"
                 alt="Arrow"
               />
-            </button>
+            </a>
           </div>
         </div>
       </div>
       <section
         class="lg:p-12 flex flex-col lg:flex-row items-center justify-center"
       >
-        <div>
+        <div class="big-task">
           <h3 class="text-center text-xl mb-4">Your Big Task</h3>
           <img
             src="./assets/images/cube.png"
@@ -137,19 +139,19 @@
           <h3 class="text-center text-xl mb-4 text-zinc-200">
             Smaller Manageable Chunks
           </h3>
-          <div class="gap-8 flex justify-center">
+          <div class="chunk gap-8 flex justify-center">
             <img
-              class="lg:h-24 lg:w-24 h-16 w-16"
+              class="cone lg:h-24 lg:w-24 h-16 w-16"
               src="./assets/images/cone.png"
               alt=""
             />
             <img
-              class="lg:h-24 lg:w-24 h-16 w-16"
+              class="cone lg:h-24 lg:w-24 h-16 w-16"
               src="./assets/images/cone.png"
               alt=""
             />
             <img
-              class="lg:h-24 lg:w-24 h-16 w-16"
+              class="cone lg:h-24 lg:w-24 h-16 w-16"
               src="./assets/images/cone.png"
               alt=""
             />
@@ -189,15 +191,15 @@
             Loaded with Productivity Features
           </h2>
           <p class="text-zinc-300 lg:w-3/5">
-            Get started and get things done quickly by effortlessly breaking
-            down your big goals into manageable actions.
+            Our tool is packed with the features to help you get most out of
+            your tasks, each feature is built with your productivity in mind.
           </p>
         </div>
         <div
           class="card-container grid lg:grid-cols-3 grid-cols-1 gap-8 lg:px-32"
         >
           <div
-            class="h-32 bg-[#1E293B] p-4 gap-6 shadow-md flex items-center hover:scale-105 hover:cursor-pointer transition-all ease-in"
+            class="card h-32 bg-[#1E293B] p-4 gap-6 shadow-md flex items-center hover:!scale-105 hover:cursor-pointer transition-all ease-in"
           >
             <div>
               <img
@@ -212,13 +214,13 @@
                 Driven by AI
               </h4>
               <p class="text-[0.8rem]">
-                Some Get started and get things done quickly by effortlessly
-                effortlessly
+                Harnessing the power of AI, Venus helps you stay focused and
+                productive
               </p>
             </div>
           </div>
           <div
-            class="h-32 bg-[#1E293B] p-4 gap-6 shadow-md flex items-center hover:scale-105 hover:cursor-pointer transition-all ease-in"
+            class="card h-32 bg-[#1E293B] p-4 gap-6 shadow-md flex items-center hover:!scale-105 hover:cursor-pointer transition-all ease-in"
           >
             <div>
               <img
@@ -230,16 +232,16 @@
             </div>
             <div>
               <h4 class="font-semibold text-lg tracking-wider font-mono">
-                Driven by AI
+                Smart Tasks
               </h4>
               <p class="text-[0.8rem]">
-                Some Get started and get things done quickly by effortlessly
-                effortlessly
+                Divides complex tasks into manageable steps, making it easier to
+                track.
               </p>
             </div>
           </div>
           <div
-            class="h-32 bg-[#1E293B] p-4 gap-6 shadow-md flex items-center hover:scale-105 hover:cursor-pointer transition-all ease-in"
+            class="card h-32 bg-[#1E293B] p-4 gap-6 shadow-md flex items-center hover:!scale-105 hover:cursor-pointer transition-all ease-in"
           >
             <div>
               <img
@@ -251,16 +253,16 @@
             </div>
             <div>
               <h4 class="font-semibold text-lg tracking-wider font-mono">
-                Driven by AI
+                Secure
               </h4>
               <p class="text-[0.8rem]">
-                Some Get started and get things done quickly by effortlessly
-                effortlessly
+                Helps you stay focused and productive ensuring that your data is
+                secure
               </p>
             </div>
           </div>
           <div
-            class="h-32 bg-[#1E293B] p-4 gap-6 shadow-md flex items-center hover:scale-105 hover:cursor-pointer transition-all ease-in"
+            class="card h-32 bg-[#1E293B] p-4 gap-6 shadow-md flex items-center hover:!scale-105 hover:cursor-pointer transition-all ease-in"
           >
             <div>
               <img
@@ -272,16 +274,16 @@
             </div>
             <div>
               <h4 class="font-semibold text-lg tracking-wider font-mono">
-                Driven by AI
+                Task Organization
               </h4>
               <p class="text-[0.8rem]">
-                Some Get started and get things done quickly by effortlessly
-                effortlessly
+                PPrioritizing what matters most to ensure nothing falls through
+                the cracks.
               </p>
             </div>
           </div>
           <div
-            class="h-32 bg-[#1E293B] p-4 gap-6 shadow-md flex items-center hover:scale-105 hover:cursor-pointer transition-all ease-in"
+            class="card h-32 bg-[#1E293B] p-4 gap-6 shadow-md flex items-center hover:!scale-105 hover:cursor-pointer transition-all ease-in"
           >
             <div>
               <img
@@ -293,16 +295,16 @@
             </div>
             <div>
               <h4 class="font-semibold text-lg tracking-wider font-mono">
-                Driven by AI
+                Tracking
               </h4>
               <p class="text-[0.8rem]">
-                Some Get started and get things done quickly by effortlessly
-                effortlessly
+                Monitor your progress, helping you stay motivated and make
+                informed decisions.
               </p>
             </div>
           </div>
           <div
-            class="h-32 bg-[#1E293B] p-4 gap-6 shadow-md flex items-center hover:scale-105 hover:cursor-pointer transition-all ease-in"
+            class="card h-32 bg-[#1E293B] p-4 gap-6 shadow-md flex items-center hover:!scale-105 hover:cursor-pointer transition-all ease-in"
           >
             <div>
               <img
@@ -314,11 +316,11 @@
             </div>
             <div>
               <h4 class="font-semibold text-lg tracking-wider font-mono">
-                Driven by AI
+                Access Anywhere
               </h4>
               <p class="text-[0.8rem]">
-                Some Get started and get things done quickly by effortlessly
-                effortlessly
+                Access your tasks from any device, anytime, ensuring your focus
+                on the go.
               </p>
             </div>
           </div>
@@ -330,14 +332,15 @@
             Built with Battle Tested Tech Stack
           </h2>
           <p class="text-zinc-300 w-3/5">
-            Get started and get things done quickly by effortlessly breaking
-            down your big goals into manageable actions.
+            Our tool is built with the latest and most reliable technologies to
+            ensure that you have a seamless experience.
           </p>
         </div>
         <div
           class="lg:px-24 mx-auto flex flex-col-reverse lg:flex-row items-center gap-20 justify-center"
         >
           <img
+            class="radial-cube"
             src="./assets/images/radial-cube.png"
             height="350"
             width="350"
@@ -351,6 +354,7 @@
           />
         </div>
       </section>
+
       <section class="mx-auto my-10 mb-20 lg:px-24 px-4">
         <h2 class="text-4xl font-semibold my-10">FAQs</h2>
         <div class="faq-container grid lg:grid-cols-2 grid-cols-1 gap-8">
@@ -359,38 +363,99 @@
               How does Venus helps me with my tasks?
             </p>
             <p class="answer text-md text-zinc-300">
-              Get started and get things done quickly by effortlessly breaking
-              down your big goals into manageable actions.
+              Venus helps you to break down your big goals into manageable tasks
+              which can help you stay organized and productive.
             </p>
           </div>
           <div>
             <p class="question text-lg font-semibold">
-              How does Venus helps me with my tasks?
+              How does the smart task breakdown work?
             </p>
             <p class="answer text-md text-zinc-300">
-              Get started and get things done quickly by effortlessly breaking
-              down your big goals into manageable actions.
+              It analyzes your task description using AI and automatically
+              creates a detailed, step-by-step plan for easier execution.
             </p>
           </div>
           <div>
             <p class="question text-lg font-semibold">
-              How does Venus helps me with my tasks?
+              Is there a free trial available?
             </p>
             <p class="answer text-md text-zinc-300">
-              Get started and get things done quickly by effortlessly breaking
-              down your big goals into manageable actions.
+              Yes, you can start with our Hobby plan to explore all features and
+              see how it fits your workflow.
             </p>
           </div>
           <div>
             <p class="question text-lg font-semibold">
-              How does Venus helps me with my tasks?
+              Which devices are supported?
             </p>
             <p class="answer text-md text-zinc-300">
-              Get started and get things done quickly by effortlessly breaking
-              down your big goals into manageable actions.
+              Venus is a web based tool hence it is cross-platform and works on
+              any device, whether desktop, tablet, or smartphone.
             </p>
           </div>
         </div>
+      </section>
+      <section class="mx-auto my-10 mb-20 lg:px-24 px-4">
+        <h2 class="text-4xl font-semibold mt-10">Feedback</h2>
+        <p class="text-zinc-300 my-4">
+          Your feedback is important to us. Please feel free to share your
+          views!
+        </p>
+        <form class="md:w-3/4" action="https://submit-form.com/C8fCKB2oo">
+          <div class="grid gap-6 mb-6 md:grid-cols-2">
+            <div>
+              <label
+                for="name"
+                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                >Your name</label
+              >
+              <input
+                type="text"
+                id="name"
+                name="name"
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                placeholder="John"
+                required
+              />
+            </div>
+            <div>
+              <label
+                for="email"
+                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                >Email</label
+              >
+              <input
+                type="text"
+                id="email"
+                name="email"
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                placeholder="example@mail.com"
+                required
+              />
+            </div>
+          </div>
+          <div class="mb-6">
+            <label
+              for="message"
+              class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+              >Your message</label
+            >
+            <textarea
+              id="message"
+              rows="4"
+              class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              placeholder="Write your thoughts here..."
+              required
+            ></textarea>
+          </div>
+          <button
+            type="submit"
+            class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+          >
+            Submit
+          </button>
+        </form>
       </section>
       <div class="flex justify-center my-4">
         <div class="w-4/5 border-2 border-zinc-500"></div>
@@ -409,15 +474,22 @@
           <div class="lg:w-1/2 flex justify-around">
             <div>
               <h3 class="text-xl font-semibold tracking-wider">Resources</h3>
-              <a href="#" class="hover:text-blue-500 font-thin">Docs</a>
+              <p class="hover:text-blue-500 font-thin">Coming Soon</p>
             </div>
             <div class="flex flex-col">
               <h3 class="text-xl font-semibold tracking-wider">Links</h3>
-              <a href="#" class="hover:text-blue-500 font-thin">Home</a>
-              <a href="#" class="hover:text-blue-500 font-thin">Get Started</a>
-              <a href="#" class="hover:text-blue-500 font-thin">Pricing</a>
-              <a href="#" class="hover:text-blue-500 font-thin">About Us</a>
-              <a href="#" class="hover:text-blue-500 font-thin">Contact Us</a>
+              <a href="index.html" class="hover:text-blue-500 font-thin"
+                >Home</a
+              >
+              <a href="get-started.html" class="hover:text-blue-500 font-thin"
+                >Get Started</a
+              >
+              <a href="pricing.html" class="hover:text-blue-500 font-thin"
+                >Pricing</a
+              >
+              <a href="about.html" class="hover:text-blue-500 font-thin"
+                >About Us</a
+              >
             </div>
           </div>
         </div>

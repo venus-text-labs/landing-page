@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Meta -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Get Started - Venus Your Productivity Companion</title>
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="index.css" />
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicon/" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./assets/favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="./assets/favicon/site.webmanifest" />
+    <link rel="icon" href="./assets/favicon/favicon.ico" type="image/x-icon" />
+    <link
+      rel="icon"
+      href="./assets/favicon/android-chrome-192x192.png"
+      sizes="192x192"
+    />
+    <link
+      rel="icon"
+      href="./assets/favicon/android-chrome-512x512.png"
+      sizes="512x512"
+    />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="font-montserrat">
+    <main class="container mx-auto lg:px-4">
+      <nav class="w-full flex justify-between h-24 lg:my-4 items-center">
+        <a href="index.html">
+          <img
+            height="120"
+            width="120"
+            src="./assets/images/logo.png"
+            alt="Venus Logo"
+          />
+        </a>
+        <div class="flex items-center justify-between gap-8">
+          <a
+            href="pricing.html"
+            class="hover:underline text-zinc-200 z-50 hover:scale-105 text-xs lg:text-lg"
+          >
+            Pricing
+          </a>
+          <a
+            href="get-started.html"
+            class="text-white z-50 lg:pr-1 bg-gradient-to-r text-xs lg:text-sm items-center inline-flex from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-1 focus:outline-none focus:ring-cyan-300 font-medium rounded-lg ease-in-out px-5 py-2.5 transition-colors delay-300 text-center me-2 mb-2"
+          >
+            Get Started
+            <img
+              class="hidden lg:block"
+              height="50"
+              width="50"
+              src="./assets/images/arrow.svg"
+              alt="Arrow"
+            />
+          </a>
+        </div>
+      </nav>
+      <section class="flex justify-center w-full pb-12">
+        <img class="" src="./assets/images/banner.png" alt="Banner" />
+      </section>
+      <section class="md:px-12">
+        <div
+          class="grid mb-8 border border-gray-200 rounded-lg shadow-sm dark:border-gray-700 md:mb-12 md:grid-cols-2"
+        >
+          <figure
+            class="flex flex-col !bg-[#1e293b] items-center justify-center p-8 text-center border-b border-gray-200 rounded-t-lg md:rounded-t-none md:rounded-ss-lg md:border-e dark:border-gray-700"
+          >
+            <blockquote
+              class="max-w-2xl mx-auto mb-4 text-gray-500 lg:mb-8 dark:text-gray-400"
+            >
+              <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+                About Us
+              </h3>
+              <p class="my-4">
+                At Venus Text Labs, we specialize in building advanced
+                collaborative tools that empower individuals and teams to
+                seamlessly work together.
+              </p>
+              <p>
+                Our flagship product leverages state-of-the-art AI and NLP
+                technologies to enhance the writing experience, making it more
+                efficient, intuitive, and productive.
+              </p>
+            </blockquote>
+            <figcaption class="flex items-center justify-center"></figcaption>
+          </figure>
+          <figure
+            class="flex flex-col items-center justify-center p-8 text-center !bg-[#1e293b] border-b border-gray-200 md:rounded-se-lg dark:border-gray-700"
+          >
+            <blockquote
+              class="max-w-2xl mx-auto mb-4 text-gray-500 lg:mb-8 dark:text-gray-400"
+            >
+              <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+                Contact Us
+              </h3>
+              <p class="my-4">
+                Feel free to reach out to us if you have any questions or
+                suggestions ...
+              </p>
+            </blockquote>
+            <div class="w-full max-w-[16rem]">
+              <div class="relative">
+                <label for="email" class="sr-only">Email</label>
+                <input
+                  id="copy-email"
+                  type="text"
+                  class="col-span-6 bg-gray-50 border border-gray-300 text-gray-500 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  value="rosh.s568@gmail.com"
+                  disabled
+                  readonly
+                />
+                <button
+                  data-copy-to-clipboard-target="email"
+                  data-tooltip-target="tooltip-copy-email"
+                  class="absolute end-2 top-1/2 -translate-y-1/2 text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg p-2 inline-flex items-center justify-center"
+                  onclick="copyToClipboard()"
+                >
+                  <span id="default-icon">
+                    <svg
+                      class="w-3.5 h-3.5"
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="currentColor"
+                      viewBox="0 0 18 20"
+                    >
+                      <path
+                        d="M16 1h-3.278A1.992 1.992 0 0 0 11 0H7a1.993 1.993 0 0 0-1.722 1H2a2 2 0 0 0-2 2v15a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2Zm-3 14H5a1 1 0 0 1 0-2h8a1 1 0 0 1 0 2Zm0-4H5a1 1 0 0 1 0-2h8a1 1 0 1 1 0 2Zm0-5H5a1 1 0 0 1 0-2h2V2h4v2h2a1 1 0 1 1 0 2Z"
+                      />
+                    </svg>
+                  </span>
+                  <span
+                    id="success-icon"
+                    class="hidden inline-flex items-center"
+                  >
+                    <svg
+                      class="w-3.5 h-3.5 text-blue-700 dark:text-blue-500"
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 16 12"
+                    >
+                      <path
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M1 5.917 5.724 10.5 15 1.5"
+                      />
+                    </svg>
+                  </span>
+                </button>
+              </div>
+            </div>
+          </figure>
+          <figure
+            class="flex flex-col items-center justify-center p-8 text-center !bg-[#1e293b] border-b border-gray-200 md:rounded-es-lg md:border-b-0 md:border-e dark:border-gray-700"
+          >
+            <blockquote
+              class="max-w-2xl mx-auto mb-4 text-gray-500 lg:mb-8 dark:text-gray-400"
+            >
+              <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+                Star Us on GitHub
+              </h3>
+              <p class="my-4">
+                Explore our repositories on GitHub and star us to show your
+                support.
+              </p>
+            </blockquote>
+            <figcaption class="flex items-center justify-center">
+              <img
+                class="rounded-full w-9 h-9"
+                src="./assets/images/github.png"
+                alt="Github"
+              />
+              <div
+                class="space-y-0.5 font-medium dark:text-white text-left rtl:text-right ms-3"
+              >
+                <a href="https://github.com/venus-text-labs">Star Now</a>
+              </div>
+            </figcaption>
+          </figure>
+          <figure
+            class="flex flex-col items-center justify-center p-8 text-center !bg-[#1e293b] border-gray-200 rounded-b-lg md:rounded-se-lg dark:border-gray-700"
+          >
+            <blockquote
+              class="max-w-2xl mx-auto mb-4 text-gray-500 lg:mb-8 dark:text-gray-400"
+            >
+              <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+                Watch the Development
+              </h3>
+              <p class="my-4">
+                Watch the development of your application in real-time with us,
+                as we build this application together from scratch.
+              </p>
+            </blockquote>
+            <figcaption class="flex items-center justify-center">
+              <img
+                class="rounded-full w-12 h-12"
+                src="./assets/images/youtube.png"
+                alt="Youtube"
+              />
+              <div
+                class="space-y-0.5 font-medium dark:text-white text-left rtl:text-right ms-3"
+              >
+                <a href="https://www.youtube.com/@idkcodes">Watch Now</a>
+              </div>
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+      <!-- Footer -->
+      <div class="flex justify-center my-4">
+        <div class="w-4/5 border-2 border-zinc-500"></div>
+      </div>
+      <footer class="pt-8 lg:px-36">
+        <div class="flex flex-col-reverse lg:flex-row justify-between">
+          <div class="flex items-center gap-8 lg:w-1/2">
+            <img
+              height="200"
+              width="200"
+              src="./assets/images/footer.png"
+              alt=""
+            />
+            <h3 class="text-2lg font-semibold">Venus Text Labs</h3>
+          </div>
+          <div class="lg:w-1/2 flex justify-around">
+            <div>
+              <h3 class="text-xl font-semibold tracking-wider">Resources</h3>
+              <p class="hover:text-blue-500 font-thin">Coming Soon</p>
+            </div>
+            <div class="flex flex-col">
+              <h3 class="text-xl font-semibold tracking-wider">Links</h3>
+              <a href="index.html" class="hover:text-blue-500 font-thin"
+                >Home</a
+              >
+              <a href="get-started.html" class="hover:text-blue-500 font-thin"
+                >Get Started</a
+              >
+              <a href="pricing.html" class="hover:text-blue-500 font-thin"
+                >Pricing</a
+              >
+              <a href="about.html" class="hover:text-blue-500 font-thin"
+                >About Us</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="w-full text-center flex justify-center py-4 text-zinc-300">
+          Copyright © Venus Text Labs 2024 All Right Reserved
+        </div>
+      </footer>
+    </main>
+  </body>
+  <script>
+    function copyToClipboard() {
+      // Get the input element by its ID
+      var copyText = document.getElementById("copy-email");
+
+      // Copy the text from the input field
+      navigator.clipboard.writeText(copyText.value).then(
+        function () {
+          // Hide the default icon
+          document.getElementById("default-icon").style.display = "none";
+          // Show the success icon
+          document.getElementById("success-icon").style.display = "inline-flex";
+
+          // Hide the success icon after 2 seconds and show the default icon
+          setTimeout(function () {
+            document.getElementById("success-icon").style.display = "none";
+            document.getElementById("default-icon").style.display =
+              "inline-flex";
+          }, 2000);
+        },
+        function (err) {
+          console.error("Failed to copy text: ", err);
+        }
+      );
+    }
+  </script>
+</html>

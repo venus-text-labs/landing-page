@@ -1,5 +1,5 @@
 const path = require("path");
-const HtmlWebPackPlugin = require("html-webpack-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const webpack = require('webpack');
 
@@ -19,6 +19,13 @@ module.exports = {
         open: true,
         historyApiFallback: true,
         watchFiles: ['src/**/*'],
+        historyApiFallback: {
+            rewrites: [
+                { from: /^\/$/, to: '/index.html' },
+                { from: /^\/pricing$/, to: '/pricing.html' },
+                { from: /^\/get-started$/, to: '/get-started.html' },
+            ],
+        },
     },
     module: {
         rules: [
@@ -46,9 +53,21 @@ module.exports = {
             filename: "styles.css",
             chunkFilename: "styles.css",
         }),
-        new HtmlWebPackPlugin({
+        new HtmlWebpackPlugin({
             template: "./src/index.html",
             filename: "./index.html",
+        }),
+        new HtmlWebpackPlugin({
+            template: './src/get-started.html',
+            filename: 'get-started.html',
+        }),
+        new HtmlWebpackPlugin({
+            template: './src/pricing.html',
+            filename: 'pricing.html',
+        }),
+        new HtmlWebpackPlugin({
+            template: './src/about.html',
+            filename: 'about.html',
         }),
         new webpack.HotModuleReplacementPlugin(),
     ],
