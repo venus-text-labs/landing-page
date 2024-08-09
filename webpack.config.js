@@ -103,7 +103,7 @@ module.exports = (env, argv) => {
                 filename: 'pricing.html',
             }),
             new HtmlWebpackPlugin({
-                template: './src/pricing.html',
+                template: './src/about.html',
                 filename: 'about.html',
             }),
             ...(isProduction ? [] : [new webpack.HotModuleReplacementPlugin()]),
