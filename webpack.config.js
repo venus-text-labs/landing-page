@@ -95,6 +95,10 @@ module.exports = (env, argv) => {
                 template: './src/pricing.html',
                 filename: 'pricing.html',
             }),
+            new HtmlWebpackPlugin({
+                template: './src/pricing.html',
+                filename: 'about.html',
+            }),
             ...(isProduction ? [] : [new webpack.HotModuleReplacementPlugin()]),
             ...(isProduction ? [] : [new BundleAnalyzerPlugin()]), // Comment this out in production if not needed
         ],
