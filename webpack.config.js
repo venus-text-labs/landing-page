@@ -44,6 +44,13 @@ module.exports = (env, argv) => {
                     ],
                 },
                 {
+                    test: /\.xml/,
+                    type: 'asset/resource',
+                    generator: {
+                        filename: 'sitemap.xml',
+                    },
+                },
+                {
                     test: /\.(jpe?g|png|gif|svg)$/i,
                     use: [
                         {
